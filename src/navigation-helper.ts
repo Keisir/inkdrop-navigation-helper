@@ -2,14 +2,14 @@
 
 import { NavigationComponent } from './navigation-component';
 
-export {};
-
 class NavigationHelperPlugin {
     activate = async () => {
         window.addEventListener('mouseup', this.navigationHandler);
 
-        inkdrop.components.registerClass(NavigationComponent);
-        inkdrop.layouts.insertComponentToLayoutBefore('sidebar-menu', 'SideBarMenuItemAllNotes', NavigationComponent.name);
+        if (inkdrop.config.get('navigation-helper.navigationComponent')) {
+            inkdrop.components.registerClass(NavigationComponent);
+            inkdrop.layouts.insertComponentToLayoutBefore('sidebar-menu', 'SideBarMenuItemAllNotes', NavigationComponent.name);
+        }
     };
 
     navigationHandler = (event: MouseEvent) => {
@@ -32,7 +32,15 @@ class NavigationHelperPlugin {
 const plugin = new NavigationHelperPlugin();
 
 module.exports = {
-    config: {},
+    config: {
+        navigationComponent: {
+            title: 'Visual navigation component',
+            description:
+                'Specifies whether to display a visual component that can be used to navigate back and forth in the application. (Inkdrop must be reloaded to apply this setting)',
+            type: 'boolean',
+            default: true,
+        },
+    },
     activate() {
         plugin.activate();
     },

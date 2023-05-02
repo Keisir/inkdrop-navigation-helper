@@ -13,7 +13,7 @@ export class NavigationComponent extends React.Component {
                         inkdrop.commands.dispatch(document.body, 'core:navigate-back');
                     }}
                 >
-                    <i aria-hidden="true" className="chevron left icon" />
+                    <i aria-hidden="true" className="arrow left icon" />
                 </button>
                 <button
                     className="navigation-helper-item"
@@ -22,7 +22,7 @@ export class NavigationComponent extends React.Component {
                         inkdrop.commands.dispatch(document.body, 'core:navigate-forward');
                     }}
                 >
-                    <i aria-hidden="true" className="chevron right icon" />
+                    <i aria-hidden="true" className="arrow right icon" />
                 </button>
             </div>
         );
