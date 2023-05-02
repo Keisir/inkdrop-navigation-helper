@@ -1,3 +1,4 @@
-## 0.1.0 - First Release
-* Every feature added
-* Every bug fixed
+## 1.0.0 - First Release
+
+-   Added basic UI component for navigation
+-   Added mapping between mouse buttons and navigation commands
