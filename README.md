@@ -9,9 +9,10 @@ Additionally, a visual component can be added via the settings, which enables th
 ## Usage
 
 The navigation is based on two commands provided by Inkdrop.
-| Control | Command |
+
+| Control        | Command                 |
 | -------------- | ----------------------- |
-| Mouse Button 3 | `core:navigate-back` |
+| Mouse Button 3 | `core:navigate-back`    |
 | Mouse Button 4 | `core:navigate-forward` |
 
 ## Install
@@ -28,4 +29,4 @@ If you find a bug, you can also submit it to me by opening an [issue on Github](
 
 ## Changelog
 
-See the [GitHub releases](https://github.com/keisir/inkdrop-navigation-helper/releases) oder [CHANGELOG.md](CHANGELOG.md) for an overview of what changed in each update.
+See the [GitHub releases](https://github.com/keisir/inkdrop-navigation-helper/releases) or [CHANGELOG.md](CHANGELOG.md) for an overview of what changed in each update.
