@@ -1,7 +1,7 @@
 {
   "name": "navigation-helper",
   "main": "./lib/navigation-helper",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Inkdrop plugin to simplify navigation between notes",
   "keywords": [],
   "repository": "https://github.com/Keisir/inkdrop-navigation-helper",
