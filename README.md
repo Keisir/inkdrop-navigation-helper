@@ -10,10 +10,10 @@ Additionally, a visual component can be added via the settings, which enables th
 
 The navigation is based on two commands provided by Inkdrop.
 
-| Control        | Command                 |
-| -------------- | ----------------------- |
-| Mouse Button 3 | `core:navigate-back`    |
-| Mouse Button 4 | `core:navigate-forward` |
+| Control                   | Command                 |
+| ------------------------- | ----------------------- |
+| <kbd>Mouse Button 3</kbd> | `core:navigate-back`    |
+| <kbd>Mouse Button 4</kbd> | `core:navigate-forward` |
 
 ## Install
 
