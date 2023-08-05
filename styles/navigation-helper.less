@@ -9,12 +9,21 @@
     border: none;
     outline: none;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 14px;
     margin-right: 2px;
     padding: 0;
     color: var(--sidebar-menu-action-color);
 }
 
-.navigation-helper-item:hover {
+.navigation-helper-item:disabled {
+    opacity: 0.3;
+    cursor: auto;
+}
+
+.navigation-helper-item:hover:not(:disabled) {
     color: var(--sidebar-menu-action-hover-color);
+}
+
+.navigation-helper-item:active {
+    color: var(--sidebar-menu-action-color);
 }

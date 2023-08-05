@@ -29,4 +29,10 @@ If you find a bug, you can also submit it to me by opening an [issue on Github](
 
 ## Changelog
 
-See the [GitHub releases](https://github.com/keisir/inkdrop-navigation-helper/releases) or [CHANGELOG.md](CHANGELOG.md) for an overview of what changed in each update.
+### 1.1.0 - UX
+- Arrow keys are now slightly larger
+- The arrow keys are now disabled when navigation in that direction is not possible.
+
+### 1.0.0 - Initial release
+- Added basic UI component for navigation
+- Added mapping between mouse buttons and navigation commands

@@ -62,9 +62,19 @@ declare namespace Inkdrop {
      * https://docs.inkdrop.app/reference/component-manager
      */
     interface ComponentManager {
+        classes: ComponentClasses;
         registerClass(klass: typeof React.Component, klassName?: string): void;
         deleteClass(klass: typeof React.Component, klassName?: string): void;
         getComponentClass(klassName: string): void;
+    }
+
+    /**
+     * https://docs.inkdrop.app/reference/components
+     */
+    interface ComponentClasses {
+        Dialog: any;
+        MessageDialog: any;
+        NotebookListBar: any;
     }
 
     /**
@@ -241,7 +251,7 @@ declare namespace Inkdrop {
      * https://docs.inkdrop.app/reference/menu-manager
      */
     interface MenuManager {
-        add(items: MenuItem): Disposable;
+        add(items: Array<MenuItem>): Disposable;
         update(): void;
     }
 
@@ -344,7 +354,7 @@ declare namespace Inkdrop {
         layouts: unknown;
         localConfig: unknown;
         mainLayout: unknown;
-        navigation: unknown;
+        navigation: NavigationState;
         noteListBar: unknown;
         notes: unknown;
         preferences: unknown;
@@ -355,5 +365,16 @@ declare namespace Inkdrop {
         sidebar: unknown;
         stats: unknown;
         tags: unknown;
+    }
+
+    interface NavigationState {
+        history: Array<NavigationStateHistory>;
+        offset: number;
+    }
+
+    interface NavigationStateHistory {
+        editingNote: string;
+        queryContext: unknown;
+        sidebar: unknown;
     }
 }
