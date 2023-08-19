@@ -20,11 +20,24 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-      
+
       - run: npm ci
       
-      - run: npm run build
-
       - run: npm run lint
+
+      - name: Build
+        run: tsc --outDir ./lib-check
+
+      - name: Check if ./lib is up to date
+        shell: pwsh
+        run: |
+          $checksumLib = Get-ChildItem ./lib -Recurse | Get-FileHash -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Out-String
+          $checksumLibCheck = Get-ChildItem ./lib-check -Recurse | Get-FileHash -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Out-String
+          if ($checksumLib -ne $checksumLibCheck) {
+            Write-Error "./lib is not up to date!"
+            $Host.SetShouldExit(1)
+          } else {
+            Write-Host "./lib is up to date!"
+          }
 
         
