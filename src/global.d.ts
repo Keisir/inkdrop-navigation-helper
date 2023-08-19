@@ -4,7 +4,7 @@ import React from 'react';
 import { Disposable } from 'event-kit';
 
 declare global {
-    var inkdrop: Inkdrop.Environment;
+    var inkdrop: Inkdrop.Environment; // eslint-disable-line no-var
 }
 
 declare namespace Inkdrop {
@@ -54,7 +54,7 @@ declare namespace Inkdrop {
      */
     interface CommandRegistry {
         add<T>(target: HTMLElement, commandName: string, callback: (event: CustomEvent<T>) => void): Disposable;
-        add(target: HTMLElement, commands: { [index: string]: (event: CustomEvent<any>) => void }): Disposable; // ??
+        add(target: HTMLElement, commands: { [index: string]: (event: CustomEvent<any>) => void }): Disposable; // eslint-disable-line @typescript-eslint/no-explicit-any
         dispatch<T>(target: HTMLElement, commandName: string, detail?: T): void;
     }
 
@@ -72,9 +72,9 @@ declare namespace Inkdrop {
      * https://docs.inkdrop.app/reference/components
      */
     interface ComponentClasses {
-        Dialog: any;
-        MessageDialog: any;
-        NotebookListBar: any;
+        Dialog: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+        MessageDialog: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+        NotebookListBar: any; // eslint-disable-line @typescript-eslint/no-explicit-any
     }
 
     /**
@@ -134,7 +134,7 @@ declare namespace Inkdrop {
         files: DBFiles;
         utils: DBUtils;
 
-        onChange(callback: (change: PouchDB.Core.ChangesResponseChange<{}>) => void): Disposable;
+        onChange(callback: (change: PouchDB.Core.ChangesResponseChange<object>) => void): Disposable;
         onNoteChange(callback: (change: PouchDB.Core.ChangesResponseChange<Note>) => void): Disposable;
         onBookChange(callback: (change: PouchDB.Core.ChangesResponseChange<Book>) => void): Disposable;
         onTagChange(callback: (change: PouchDB.Core.ChangesResponseChange<Tag>) => void): Disposable;

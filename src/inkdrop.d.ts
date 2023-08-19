@@ -1,5 +1,4 @@
 declare module 'inkdrop' {
-    import React from 'react';
     const markdownRenderer: Inkdrop.MarkdownRenderer;
 }
 
