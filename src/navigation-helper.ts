@@ -38,13 +38,13 @@ module.exports = {
             description:
                 'Specifies whether to display a visual component that can be used to navigate back and forth in the application. (Inkdrop must be reloaded to apply this setting)',
             type: 'boolean',
-            default: true,
-        },
+            default: true
+        }
     },
     activate() {
         plugin.activate();
     },
     deactivate() {
         plugin.deactivate();
-    },
+    }
 };

@@ -13,13 +13,13 @@ interface NavigationComponentProps {}
 export class NavigationComponent extends React.Component<NavigationComponentProps, NavigationComponentState> {
     state: Readonly<NavigationComponentState> = {
         allowBackward: false,
-        allowForward: false,
+        allowForward: false
     };
 
     componentDidMount = (): void => {
         const unsubscribe = inkdrop.store.subscribe(this.stateChanged);
         this.setState({
-            stateListenerUnsubscribe: unsubscribe,
+            stateListenerUnsubscribe: unsubscribe
         });
         this.stateChanged();
     };
@@ -42,7 +42,7 @@ export class NavigationComponent extends React.Component<NavigationComponentProp
         }
         this.setState({
             allowBackward: allowBackward,
-            allowForward: allowForward,
+            allowForward: allowForward
         });
     };
 
@@ -55,9 +55,11 @@ export class NavigationComponent extends React.Component<NavigationComponentProp
                     disabled={!this.state.allowBackward}
                     onClick={() => {
                         inkdrop.commands.dispatch(document.body, 'core:navigate-back');
-                    }}
-                >
-                    <i aria-hidden="true" className="arrow left icon" />
+                    }}>
+                    <i
+                        aria-hidden="true"
+                        className="arrow left icon"
+                    />
                 </button>
                 <button
                     className="navigation-helper-item"
@@ -65,9 +67,11 @@ export class NavigationComponent extends React.Component<NavigationComponentProp
                     disabled={!this.state.allowForward}
                     onClick={() => {
                         inkdrop.commands.dispatch(document.body, 'core:navigate-forward');
-                    }}
-                >
-                    <i aria-hidden="true" className="arrow right icon" />
+                    }}>
+                    <i
+                        aria-hidden="true"
+                        className="arrow right icon"
+                    />
                 </button>
             </div>
         );
