@@ -1,43 +1,41 @@
 name: Node.js CI
 
 on:
-  push:
-    branches:
-     - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+        steps:
+            - uses: actions/checkout@v3
 
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18.x
+            - name: Use Node.js 18.x
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18.x
 
-      - run: npm ci
-      
-      - run: npm run lint
+            - run: npm ci
 
-      - name: Build
-        run: tsc --outDir ./lib-check
+            - run: npm run lint
 
-      - name: Check if ./lib is up to date
-        shell: pwsh
-        run: |
-          $checksumLib = Get-ChildItem ./lib -Recurse | Get-FileHash -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Out-String
-          $checksumLibCheck = Get-ChildItem ./lib-check -Recurse | Get-FileHash -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Out-String
-          if ($checksumLib -ne $checksumLibCheck) {
-            Write-Error "./lib is not up to date!"
-            $Host.SetShouldExit(1)
-          } else {
-            Write-Host "./lib is up to date!"
-          }
+            - name: Build
+              run: tsc --outDir ./lib-check
 
-        
+            - name: Check if ./lib is up to date
+              shell: pwsh
+              run: |
+                  $checksumLib = Get-ChildItem ./lib -Recurse | Get-FileHash -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Out-String
+                  $checksumLibCheck = Get-ChildItem ./lib-check -Recurse | Get-FileHash -Algorithm SHA256 | Select-Object -ExpandProperty Hash | Out-String
+                  if ($checksumLib -ne $checksumLibCheck) {
+                    Write-Error "./lib is not up to date!"
+                    $Host.SetShouldExit(1)
+                  } else {
+                    Write-Host "./lib is up to date!"
+                  }

@@ -1,32 +1,72 @@
 {
-  "name": "navigation-helper",
-  "main": "./lib/navigation-helper",
-  "version": "1.1.0",
-  "description": "Inkdrop plugin to simplify navigation between notes",
-  "keywords": [],
-  "repository": "https://github.com/Keisir/inkdrop-navigation-helper",
-  "license": "MIT",
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "lint": "eslint . --ext .ts --ignore-pattern 'node_modules/*'",
-    "prettier-format": "prettier --config .prettierrc src/**/*.ts* --write"
-  },
-  "engines": {
-    "inkdrop": "^5.3.1"
-  },
-  "devDependencies": {
-    "@types/codemirror": "^5.60.5",
-    "@types/event-kit": "^2.4.1",
-    "@types/node": "^14.11.2",
-    "@types/pouchdb-core": "^7.0.11",
-    "@types/react": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
-    "electron": "^24.1.3",
-    "eslint": "^8.47.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.2",
-    "typescript": "^4.7.2"
-  }
+    "name": "navigation-helper",
+    "main": "./lib/navigation-helper",
+    "version": "1.1.0",
+    "description": "Inkdrop plugin to simplify navigation between notes",
+    "keywords": [],
+    "repository": "https://github.com/Keisir/inkdrop-navigation-helper",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w",
+        "lint": "eslint . --ext .ts --ignore-pattern 'node_modules/*'",
+        "prettier-format": "prettier **/*.{ts,tsx,less,yml,json} --ignore-path .gitignore --write"
+    },
+    "engines": {
+        "inkdrop": "^5.3.1"
+    },
+    "devDependencies": {
+        "@types/codemirror": "^5.60.5",
+        "@types/pouchdb-core": "^7.0.11",
+        "@types/react": "^18.2.0",
+        "@typescript-eslint/eslint-plugin": "^6.4.0",
+        "@typescript-eslint/parser": "^6.4.0",
+        "electron": "^24.1.3",
+        "eslint": "^8.47.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "event-kit": "^2.5.3",
+        "inkdrop-model": "^2.7.1",
+        "prettier": "^3.0.2",
+        "typescript": "^5.1.6"
+    },
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "electron": "16.0.10"
+                    }
+                }
+            ],
+            "@babel/preset-react"
+        ]
+    },
+    "eslintConfig": {
+        "root": true,
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+            "@typescript-eslint",
+            "prettier"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/eslint-recommended",
+            "plugin:@typescript-eslint/recommended"
+        ],
+        "rules": {
+            "prettier/prettier": "error"
+        }
+    },
+    "prettier": {
+        "singleQuote": true,
+        "semi": true,
+        "trailingComma": "none",
+        "printWidth": 150,
+        "tabWidth": 4,
+        "arrowParens": "always",
+        "bracketSameLine": true,
+        "endOfLine": "auto",
+        "singleAttributePerLine": true
+    }
 }
