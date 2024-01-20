@@ -29,6 +29,9 @@ If you find a bug, you can also submit it to me by opening an [issue on Github](
 
 ## Changelog
 
+### 1.1.1 - Support Inkdrop `>= 5.6.3`
+- Fixed a bug that affected the layout when the plugin was used with Inkdrop `>= 5.6.3`.
+
 ### 1.1.0 - UX
 - Arrow keys are now slightly larger
 - The arrow keys are now disabled when navigation in that direction is not possible.
