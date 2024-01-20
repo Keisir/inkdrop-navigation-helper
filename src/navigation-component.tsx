@@ -49,30 +49,34 @@ export class NavigationComponent extends React.Component<NavigationComponentProp
     render = () => {
         return (
             <div className="sidebar-menu-item navigation-helper-container">
-                <button
-                    className="navigation-helper-item"
-                    title="Back"
-                    disabled={!this.state.allowBackward}
-                    onClick={() => {
-                        inkdrop.commands.dispatch(document.body, 'core:navigate-back');
-                    }}>
-                    <i
-                        aria-hidden="true"
-                        className="arrow left icon"
-                    />
-                </button>
-                <button
-                    className="navigation-helper-item"
-                    title="Forward"
-                    disabled={!this.state.allowForward}
-                    onClick={() => {
-                        inkdrop.commands.dispatch(document.body, 'core:navigate-forward');
-                    }}>
-                    <i
-                        aria-hidden="true"
-                        className="arrow right icon"
-                    />
-                </button>
+                <div
+                    className="sidebar-menu-item-content"
+                    style={{ justifyContent: 'space-between' }}>
+                    <button
+                        className="navigation-helper-item"
+                        title="Back"
+                        disabled={!this.state.allowBackward}
+                        onClick={() => {
+                            inkdrop.commands.dispatch(document.body, 'core:navigate-back');
+                        }}>
+                        <i
+                            aria-hidden="true"
+                            className="arrow left icon"
+                        />
+                    </button>
+                    <button
+                        className="navigation-helper-item"
+                        title="Forward"
+                        disabled={!this.state.allowForward}
+                        onClick={() => {
+                            inkdrop.commands.dispatch(document.body, 'core:navigate-forward');
+                        }}>
+                        <i
+                            aria-hidden="true"
+                            className="arrow right icon"
+                        />
+                    </button>
+                </div>
             </div>
         );
     };
