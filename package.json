@@ -10,8 +10,8 @@
         "build": "tsc",
         "watch": "tsc -w",
         "lint": "eslint . --ext .ts --ignore-pattern 'node_modules/*'",
-        "prettier-format": "prettier **/*.{ts,tsx,less,yml,json} --ignore-path .gitignore --write",
-        "prettier-check": "prettier **/*.{ts,tsx,less,yml,json} --ignore-path .gitignore --check"
+        "format": "prettier **/*.{ts,tsx,less,yml,json} --ignore-path .gitignore --write",
+        "format:check": "prettier **/*.{ts,tsx,less,yml,json} --ignore-path .gitignore --check"
     },
     "engines": {
         "inkdrop": "^5.3.1"
