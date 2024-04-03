@@ -1,19 +1,10 @@
 # Navigation Helper
 
 This plugin simplifies the navigation in Inkdrop.
-It offers the backward and forward navigation via the mouse buttons 3 and 4.
-Additionally, a visual component can be added via the settings, which enables the forward and backward navigation.
+A visual component can be added via the settings, which enables the forward and backward navigation.
 
 ![Screenshot Navigation Component](./img/navigation-component.png)
 
-## Usage
-
-The navigation is based on two commands provided by Inkdrop.
-
-| Control                   | Command                 |
-| ------------------------- | ----------------------- |
-| <kbd>Mouse Button 3</kbd> | `core:navigate-back`    |
-| <kbd>Mouse Button 4</kbd> | `core:navigate-forward` |
 
 ## Install
 
@@ -28,6 +19,10 @@ If you have any suggestions for this plugin, feel free to share them with me by 
 If you find a bug, you can also submit it to me by opening an [issue on Github](https://github.com/keisir/inkdrop-navigation-helper/issues).
 
 ## Changelog
+
+## 1.1.2 - Support Inkdrop `>= 5.8.0`
+- In Inkdrop v5.8.0 navigation with mouse buttons is natively supported. Therefore, the plugin now only provides the visual component for navigation.
+- It is planned to add additional features in the future. (some opinioated navigation features that i have in mind)
 
 ### 1.1.1 - Support Inkdrop `>= 5.6.3`
 - Fixed a bug that affected the layout when the plugin was used with Inkdrop `>= 5.6.3`.
