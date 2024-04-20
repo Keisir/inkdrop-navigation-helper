@@ -2,16 +2,16 @@
 
 import React from 'react';
 
-interface NavigationComponentState {
+interface NavigationHistoryState {
     stateListenerUnsubscribe?: () => void;
     allowBackward: boolean;
     allowForward: boolean;
 }
 
-interface NavigationComponentProps {}
+interface NavigationHistoryProps {}
 
-export class NavigationComponent extends React.Component<NavigationComponentProps, NavigationComponentState> {
-    state: Readonly<NavigationComponentState> = {
+export class NavigationHistory extends React.Component<NavigationHistoryProps, NavigationHistoryState> {
+    state: Readonly<NavigationHistoryState> = {
         allowBackward: false,
         allowForward: false
     };
