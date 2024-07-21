@@ -1,16 +1,20 @@
 # Navigation Helper
 
 This plugin simplifies the navigation in Inkdrop.
-A visual component can be added via the settings, which enables the forward and backward navigation.
 
-![Screenshot Navigation Component](./img/navigation-component.png)
+## Features
+
+### Navigation history
+Navigate back and forth in the navigation history in the ui.
+
+![Screenshot Navigation](./img/navigation-history.png)
+
+### Bring to notebook
+Navigate to the notebook of the current note.
+
+![Screenshot Bring to notebook](./img/bring-to-notebook.png)
 
 
-## Install
-
-```bash
-ipm install navigation-helper
-```
 
 ## Contact
 

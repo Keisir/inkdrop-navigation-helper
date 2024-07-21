@@ -1,13 +1,13 @@
 {
     "name": "navigation-helper",
-    "main": "./lib/navigation-helper",
+    "main": "./lib/NavigationHelper",
     "version": "1.1.2",
     "description": "Inkdrop plugin to simplify navigation between notes",
     "keywords": [],
     "repository": "https://github.com/Keisir/inkdrop-navigation-helper",
     "license": "MIT",
     "scripts": {
-        "build": "tsc",
+        "build": "node scripts/clean-build.js && tsc",
         "watch": "tsc -w",
         "lint": "eslint . --ext .ts --ignore-pattern 'node_modules/*'",
         "format": "prettier **/*.{ts,tsx,less,yml,json} --ignore-path .gitignore --write",
